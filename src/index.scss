@@ -1,9 +1,15 @@
 $main-color: #1030AD;
 $second-color: #FFCC00;
+$background-color: #E6E8E8;
+
 $font: 'Oxygen', sans-serif;
 
 * {
   display: box;
+}
+
+body {
+    background-color: $background-color;
 }
 
 .my-flix-title {

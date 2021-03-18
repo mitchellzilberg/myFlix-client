@@ -13,7 +13,7 @@ export class MovieCard extends React.Component {
 
     return (
       <Col> 
-        <CardGroup style={{width: '24rem'}}>
+        <CardGroup style={{width: "24rem", margin:"auto", paddingTop: "20px"}}>
           <Card>
             <Card.Img variant='top' src={movie.imagePath}/>
             <Card.Body>

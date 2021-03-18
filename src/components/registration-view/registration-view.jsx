@@ -97,12 +97,12 @@ export function RegistrationView(props) {
       </FormGroup>
       <div style={{fontSize: 12, color: 'red'}}>{emailError}</div>
       
-      <FormGroup>
+      {/* <FormGroup>
         <Form.Label>
           <Form.Control type='date' value={birthday} placeholder='Birthday' onChange = {e => 
           setBirthday(e.target.value)} />
         </Form.Label>
-      </FormGroup>
+      </FormGroup> */}
       
       <FormGroup>
         <Button className='login-button' type='button' onClick={handleSubmit}>REGISTER</Button>

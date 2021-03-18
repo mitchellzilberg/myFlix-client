@@ -4,6 +4,7 @@ import axios from 'axios';
 import {connect} from 'react-redux';
 import { Link } from 'react-router-dom';
 
+// import {Navbar} from '../navbar/navbar';
 import {MovieCard} from '../movie-card/movie-card';
 import {MovieView} from '../movie-view/movie-view';
 import {LoginView} from '../login-view/login-view';
@@ -19,7 +20,9 @@ import PropTypes from 'prop-types';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import {Container, Grid, Row, Col} from 'react-bootstrap/Container'
-import {Navbar} from 'react-bootstrap/Navbar';
+// import {Navbar} from 'react-bootstrap/Navbar';
+
+import './main-view.scss';
 
 
 export class MainView extends React.Component {
@@ -92,42 +95,44 @@ export class MainView extends React.Component {
     return ( /*If the state of `selectedMovie` is not null, that selected movie will be returned. otherwise, all movies will be returned*/
       <Router>
         <div className='main-view'>
-        <Link to = {`/profile`}>
-          <Button className='nav-button' variant='link'>PROFILE</Button>
-        </Link>
-        <Link to = {`/`}>
-          <Button className='nav-button' variant='link'>HOME</Button>
-        </Link>
-        <Link to = {`/`}>
-          <Button className='nav-button' variant='link' onClick={this.onLoggedOut.bind(this)}
-          >LOGOUT</Button>
-        </Link>
-          <Route exact path='/' render={() => {
-            console.log('user= ' ,user);
-            if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
-              return <MoviesList movies={movies} />; 
-          }} />
-          <Route path='/register' render={() => <RegistrationView /> 
-          } />
-          <Route path='/profile' render={() => {
-            if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
-            return <ProfileView getFavouriteMoviesDetails={this.getFavouriteMoviesDetails} / >
-          }
-          } />
-          <Route exact path='/movies/:movieId' render={
-            ({match}) => <MovieView movie={movies.find(
-            m => m.id === match.params.movieId)}/> 
-          } />
-          <Route exact path='/genres/:name' render={({match}) => {
-            if (!movies) return <div className='main-view' />;
-            return <GenreView movie={movies.find(m => 
-            m.genre.name === match.params.name)} /> }
+            <div className="navbar">
+                <Link to = {`/profile`}>
+                <Button className='nav-button' variant='link'>PROFILE</Button>
+                </Link>
+                <Link to = {`/`}>
+                <Button className='nav-button' variant='link'>HOME</Button>
+                </Link>
+                <Link to = {`/`}>
+                <Button className='nav-button' variant='link' onClick={this.onLoggedOut.bind(this)}
+                >LOGOUT</Button>
+                </Link>
+            </div>
+            <Route exact path='/' render={() => {
+                console.log('user= ' ,user);
+                if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
+                return <MoviesList movies={movies} />; 
+            }} />
+            <Route path='/register' render={() => <RegistrationView /> 
             } />
-          <Route exact path='/directors/:name' render={({match}) => {
-            if (!movies) return <div className='main-view' />; 
-            return <DirectorView movie={movies.find(m => 
-            m.director.name === match.params.name)} />}
-          } />
+            <Route path='/profile' render={() => {
+                if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
+                return <ProfileView getFavouriteMoviesDetails={this.getFavouriteMoviesDetails} / >
+            }
+            } />
+            <Route exact path='/movies/:movieId' render={
+                ({match}) => <MovieView movie={movies.find(
+                m => m.id === match.params.movieId)}/> 
+            } />
+            <Route exact path='/genres/:name' render={({match}) => {
+                if (!movies) return <div className='main-view' />;
+                return <GenreView movie={movies.find(m => 
+                m.genre.name === match.params.name)} /> }
+                } />
+            <Route exact path='/directors/:name' render={({match}) => {
+                if (!movies) return <div className='main-view' />; 
+                return <DirectorView movie={movies.find(m => 
+                m.director.name === match.params.name)} />}
+            } />
         </div>
       </Router>
     );

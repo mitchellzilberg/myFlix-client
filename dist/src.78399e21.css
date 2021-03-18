@@ -1,5 +1,52 @@
+.profile-view {
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 75%;
+  margin: auto;
+  font-size: 100%;
+  font-weight: bold;
+  color: #1030AD;
+  text-align: center;
+}
+
+.user-info {
+  margin-top: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+.delete-button {
+  background-color: #1030AD;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.edit-profile {
+  margin-top: 20px;
+  padding: 20px;
+  align-items: center;
+}
+
+.fav-movies {
+  align-items: center;
+  padding: 20px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.navbar {
+  justify-content: center;
+  align-items: right;
+  margin: auto;
+  padding-bottom: 20px;
+}
 * {
   display: box;
+}
+
+body {
+  background-color: #E6E8E8;
 }
 
 .my-flix-title {

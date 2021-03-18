@@ -1,0 +1,51 @@
+.profile-view {
+    // background-image: url("../../../img/ticket.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 75%;
+    margin: auto;
+    font-size: 100%;
+    font-weight: bold;
+    color: #1030AD;
+    text-align: center;
+}
+
+.user-info {
+    margin-top: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+.delete-button {
+    background-color:#1030AD;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.edit-profile {
+    margin-top: 20px;
+    padding: 20px; 
+    align-items: center;
+}
+
+.fav-movies {
+    align-items: center;
+    padding: 20px; 
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+  
+//   .profile-view Button {
+//     margin: 10px 5px;
+//   }
+  
+//   .update {
+//     background-image: url("../../../img/clip.webp");
+//     background-repeat: no-repeat;
+//     background-position: center;
+//     width: 75%;
+//     margin: auto;
+//     color: rgb(0, 123, 255);
+//   }

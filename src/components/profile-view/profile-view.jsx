@@ -6,6 +6,9 @@ import {
   Form, Button, Container, Row, Col, Card, CardGroup
 } from 'react-bootstrap'; 
 import {Link} from 'react-router-dom';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
+
+import './profile-view.scss';
 
 export class ProfileView extends React.Component {
 
@@ -161,16 +164,16 @@ export class ProfileView extends React.Component {
 
     return (
 
-      <div className = 'profile-view'>
+      <div className='profile-view'>
         <Container>
           <CardGroup>
-            <Card>
+            <Card className="user-info">
               <h3>{username}</h3>
               <h5>{email}</h5>
               <Button className='delete-button' onClick={() => this.handleDeregistering()}>DELETE ACCOUNT</Button>
             </Card>
 
-            <Card>
+            <Card className="edit-profile">
               <h3>Edit Profile</h3>
               <Form.Group>
                 <Form.Control 
@@ -190,17 +193,17 @@ export class ProfileView extends React.Component {
                   onChange={(e) => this.setEmail(e.target.value)}  />
               </Form.Group>
 
-              <Form.Group>
+              {/* <Form.Group>
                 <Form.Control
                   type='date' placeholder='Enter new birthday' name='birthday' 
                   value={this.state.birthday} onChange={(e) => this.setBirthday(e.target.value)}  />
-              </Form.Group> 
+              </Form.Group>  */}
               
               <Button type='submit' className='login-button' onClick={this.handleUpdate}>UPDATE</Button>
             </Card>
 
             <Container>
-              <Card>
+              <Card className="fav-movies">
                 <h3>Favourite Movies</h3>
                 {getFavouriteMoviesDetails(favouriteMovies).map((movie, index)=> {
                  
